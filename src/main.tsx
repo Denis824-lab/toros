@@ -15,9 +15,6 @@ const NotFound = lazy(() =>
   import("./pages/News").then((m) => ({ default: m.NotFound })),
 );
 const Club = lazy(() => import("./pages/Club"));
-const Clubs = lazy(() =>
-  import("./pages/Club").then((m) => ({ default: m.Clubs })),
-);
 const Tickets = lazy(() =>
   import("./pages/Fans").then((m) => ({ default: m.Tickets })),
 );
@@ -64,7 +61,6 @@ createRoot(document.getElementById("root")!).render(
             <Route path="team" element={<Team />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="club" element={<Club />} />
-            <Route path="clubs" element={<Clubs />} />
             <Route path="news" element={<News />} />
             <Route path="news/:slug" element={<ArticlePage />} />
             <Route path="tickets" element={<Tickets />} />

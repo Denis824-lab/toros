@@ -93,11 +93,6 @@ function SiteHeader() {
                         Арена и контакты <ArrowUpRight />
                       </Link>
                     </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link to="/clubs">
-                        Клубы и соперники <ArrowUpRight />
-                      </Link>
-                    </NavigationMenuLink>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -157,17 +152,14 @@ function SiteHeader() {
             </SheetTitle>
             <SheetDescription>Нефтекамск — город хоккея</SheetDescription>
             <nav aria-label="Мобильная навигация">
-              {[
-                ["/", "Главная"],
-                ...items,
-                ["/clubs", "Клубы и соперники"],
-                ["/tickets", "Билеты"],
-              ].map(([to, label]) => (
-                <Link to={to} key={to} onClick={() => setOpen(false)}>
-                  {label}
-                  <ArrowUpRight />
-                </Link>
-              ))}
+              {[["/", "Главная"], ...items, ["/tickets", "Билеты"]].map(
+                ([to, label]) => (
+                  <Link to={to} key={to} onClick={() => setOpen(false)}>
+                    {label}
+                    <ArrowUpRight />
+                  </Link>
+                ),
+              )}
             </nav>
             <p className="muted">Демонстрационная версия нового сайта клуба</p>
           </SheetContent>
@@ -205,7 +197,6 @@ function SiteFooter() {
             <span className="eyebrow">КЛУБ</span>
             <Link to="/club">История и достижения</Link>
             <Link to="/club#arena">Арена и контакты</Link>
-            <Link to="/clubs">Клубы и соперники</Link>
           </div>
           <div>
             <span className="eyebrow">НА ЛЬДУ</span>
@@ -225,8 +216,8 @@ function SiteFooter() {
             ТОРОС · НЕФТЕКАМСК · ДЕМО 2026
             <br />
             <span>
-              Спортивные сведения проверены 05.11.2026. Промоизображения —
-              визуализации.
+              Спортивные сведения проверены 05.11.2026. Фотографии предоставлены
+              владельцем проекта.
             </span>
           </p>
           <Link to="/about-demo">

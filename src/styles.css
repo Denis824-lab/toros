@@ -412,21 +412,7 @@ a[data-slot] {
 .hero-scene-2 .hero-shade {
   background: linear-gradient(90deg, #06152df5, #06152d80 50%, #06152d05);
 }
-.hero-watermark {
-  font-family: var(--display);
-  font-style: italic;
-  font-weight: 900;
-  position: absolute;
-  top: -35px;
-  left: 26%;
-  font-size: clamp(180px, 26vw, 390px);
-  letter-spacing: -0.07em;
-  color: #b2c9e2;
-  opacity: 0.11;
-  z-index: -1;
-  line-height: 1.1;
-  pointer-events: none;
-}
+
 .hero-content {
   height: 100%;
   padding-top: 55px;
@@ -1867,27 +1853,7 @@ a[data-slot] {
   font-size: 9px;
   margin-bottom: 0;
 }
-.clubs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.club-card {
-  box-shadow: none;
-  padding: 28px;
-  position: relative;
-}
-.club-card-top {
-  display: flex;
-  justify-content: space-between;
-  color: #8091a8;
-  margin-bottom: 30px;
-}
-.club-card > .club-logo {
-  height: 70px;
-  width: 130px;
-  margin-bottom: 30px;
-}
+
 .club-code {
   font-family: var(--display);
   font-style: italic;
@@ -1898,26 +1864,7 @@ a[data-slot] {
   margin-bottom: 25px;
   color: #b4c3d8;
 }
-.club-card h2 {
-  font-size: 39px;
-}
-.club-card p {
-  font-size: 12px;
-  color: #7d8da2;
-  margin-top: 12px;
-}
-.club-card > a {
-  margin-top: 27px;
-  font-size: 11px;
-}
-.club-card.is-toros {
-  background: var(--navy);
-  color: white;
-  border-color: var(--navy);
-}
-.club-card.is-toros a {
-  color: #4bd88c;
-}
+
 .tickets-feature {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -2218,12 +2165,6 @@ a[data-slot] {
   .tickets-feature > div {
     padding: 35px;
   }
-  .clubs-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .club-card h2 {
-    font-size: 32px;
-  }
 }
 @media (max-width: 900px) {
   .desktop-nav {
@@ -2420,12 +2361,7 @@ a[data-slot] {
   .trophies strong {
     font-size: 85px;
   }
-  .club-card {
-    padding: 23px;
-  }
-  .clubs-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+
   .faq-section {
     gap: 35px;
   }
@@ -2533,12 +2469,7 @@ a[data-slot] {
     max-width: 360px;
     transform: scaleX(0.88);
   }
-  .hero-watermark {
-    font-size: 155px;
-    left: -10px;
-    top: 1px;
-    opacity: 0.13;
-  }
+
   .hero-actions {
     margin-top: 22px;
     gap: 10px;
@@ -3326,15 +3257,7 @@ a[data-slot] {
   .arena-info h3 {
     font-size: 37px;
   }
-  .clubs-grid {
-    grid-template-columns: 1fr;
-  }
-  .club-card h2 {
-    font-size: 37px;
-  }
-  .club-card {
-    padding: 28px;
-  }
+
   .tickets-feature {
     grid-template-columns: 1fr;
     position: relative;
@@ -3503,7 +3426,6 @@ button.bg-primary {
 .step-card,
 .coach-card,
 .arena-info,
-.club-card,
 .faq [data-state] {
   border-color: #dbe3ee;
 }
@@ -3530,19 +3452,7 @@ button.bg-primary {
   width: 90px;
   height: 90px;
 }
-.club-card-mark {
-  height: 85px;
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-}
-.club-card-mark .club-emblem {
-  width: 115px;
-  height: 85px;
-}
-.club-card-mark .club-logo {
-  width: 130px;
-}
+
 .calendar-marks {
   display: flex;
   align-items: center;
@@ -3623,13 +3533,7 @@ button.bg-primary {
   background: #009b38;
   pointer-events: none;
 }
-.hero-watermark {
-  opacity: 0.5;
-  color: #9bb6d5;
-  top: -26px;
-  left: 25%;
-  font-size: clamp(180px, 25vw, 385px);
-}
+
 @media (max-width: 900px) {
   .site-header::after {
     height: 76px;
@@ -3652,42 +3556,13 @@ button.bg-primary {
   .news-segment .rubber-segment__item {
     font-size: 9px;
   }
-  .hero-watermark {
-    opacity: 0.35;
-    top: 5px;
-    left: -10px;
-    font-size: 155px;
-  }
 }
-.hero-foreground {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 48%;
-  z-index: 0;
-  pointer-events: none;
-}
+
 .hero-content {
   z-index: 2;
 }
-.hero-watermark {
-  opacity: 0.58;
-}
-.hero-scene-0 .hero-image,
-.hero-scene-0 .hero-foreground {
-  object-position: 50% 0%;
-}
-@media (max-width: 900px) {
-  .hero-foreground {
-    object-position: 60% center;
-  }
-}
+
 @media (max-width: 640px) {
-  .hero-foreground {
-    object-position: 88% center;
-  }
   .hero-scene-0::after {
     content: "";
     position: absolute;
@@ -3696,13 +3571,48 @@ button.bg-primary {
     pointer-events: none;
     background: linear-gradient(0deg, #03122af0 0%, #03122a08 80%);
   }
-  .hero-watermark {
-    opacity: 0.48;
+}
+
+/* Photographic banners: keep faces clear and reserve space for editable headings. */
+.hero-scene .hero-image {
+  width: auto;
+  max-width: none;
+  right: 0;
+  object-fit: contain;
+  object-position: right center;
+  mask-image: linear-gradient(90deg, transparent, #000 30%);
+}
+@media (min-width: 641px) {
+  .hero-scene-1 h1 {
+    font-size: clamp(64px, 6vw, 84px);
+  }
+  .hero-scene-2 h1 {
+    font-size: clamp(60px, 5.6vw, 78px);
+  }
+  .hero-scene-1 .hero-shade {
+    background: linear-gradient(90deg, #031126c9, #03112615 65%, transparent);
   }
 }
 @media (max-width: 640px) {
-  .hero-scene-0 .hero-image,
-  .hero-scene-0 .hero-foreground {
-    object-position: 88% center;
+  .hero-scene .hero-image {
+    width: 100%;
+    max-width: 100%;
+    mask-image: none;
+    object-fit: cover;
+    object-position: 85% 0%;
+  }
+  .hero-scene .hero-shade {
+    background: linear-gradient(
+      0deg,
+      #03122af5 0%,
+      #03122a66 45%,
+      #03122a05 90%
+    );
+  }
+  .hero-scene-1 h1 {
+    font-size: 57px;
+  }
+  .hero-scene-2 .hero-content {
+    padding-top: 240px;
   }
 }

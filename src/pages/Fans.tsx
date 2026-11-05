@@ -1,3 +1,4 @@
+import { media } from "../data/media";
 import { asset } from "../lib/assets";
 import { Link } from "react-router-dom";
 import {
@@ -85,8 +86,8 @@ export function Tickets() {
             </div>
           </div>
           <img
-            src={asset("/images/hero.webp")}
-            alt="Демонстрационная иллюстрация хоккеиста Тороса"
+            src={asset(media.portrait)}
+            alt="Хоккеист Тороса в бело-зелёной форме"
           />
         </div>
         <div className="steps-grid">
@@ -160,10 +161,7 @@ export function School() {
         description="Первая тренировка может стать началом большой истории."
       />
       <section className="school-hero">
-        <img
-          src={asset("/images/school.webp")}
-          alt="Демонстрационная иллюстрация юного хоккеиста"
-        />
+        <img src={asset(media.school)} alt="Юный хоккеист в экипировке" />
         <div className="container">
           <span className="eyebrow">ДЕТСКО-ЮНОШЕСКАЯ СПОРТИВНАЯ ШКОЛА</span>
           <h2>
@@ -272,8 +270,8 @@ export function School() {
           </Button>
         </div>
         <SourceNote href={sources.club}>
-          Информация о наличии школы — по официальной странице клуба.
-          Изображение — иллюстрация.
+          Информация о наличии школы — по официальной странице клуба. Фото
+          предоставлено владельцем проекта; выполнена художественная обработка.
         </SourceNote>
       </section>
     </>

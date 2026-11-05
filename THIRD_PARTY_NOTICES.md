@@ -288,7 +288,7 @@ Toros vector: https://ru.wikipedia.org/wiki/Файл:ХК_Торос.svg (revisi
 Original raster source: https://tickets.hctoros.ru/static/main/images/logo.png?v=2023
 Buran, Dizel, Tambov and Yugra emblems: https://www.vhlru.ru/teams/ (retrieved 2026-11-05). Salavat Yulaev emblem: https://hcsalavat.ru/local/templates/2022_default/assets/images/logo.svg
 Match photograph: https://t.me/toros_hockeyclub/16807 — credit HC Buran. Team selfie: https://t.me/toros_hockeyclub/16817 — official club channel. References and articles link to their original sources.
-Hero, team and school campaign visuals are AI-generated illustrations, not portraits of actual roster members.
+Hero, team and school campaign visuals are now processed owner-supplied photographs; see the updated photo notice below.
 
 ## tw-animate-css 1.4.0
 
@@ -314,3 +314,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+## Owner-supplied photographs — updated 2026-11-05
+
+The former synthetic hero/team/school assets have been replaced. Original photographs were supplied by the project owner from Desktop files photo_2026-11-05_17-14-08.jpg, -09.jpg, -10.jpg, and -39.jpg. Portrait-real.jpg is the unedited owner-supplied photograph. Hero-real.webp, team-real.webp and school-real.webp are art-directed derivatives of the corresponding real photographs, using the built-in image generation editor for environment extension, cool grading and subtle edge ice spray. They are not representations of additional documented events. Photo rights remain with their rightsholders; original photo license was not supplied. No image is claimed as open source.

@@ -1,3 +1,4 @@
+import { media } from "../data/media";
 import { asset } from "../lib/assets";
 import { useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
@@ -210,10 +211,7 @@ export default function Team() {
                   ДВИЖЕНИЕ.
                 </h2>
               </div>
-              <img
-                src={asset("/images/team.webp")}
-                alt="Демонстрационная иллюстрация команды"
-              />
+              <img src={asset(media.team)} alt="Игроки Тороса у борта" />
             </div>
             <div className="coaches-grid">
               {coaches.map((c, i) => (

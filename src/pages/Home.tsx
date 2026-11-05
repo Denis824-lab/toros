@@ -1,3 +1,4 @@
+import { media } from "../data/media";
 import { asset } from "../lib/assets";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -20,7 +21,7 @@ import "swiper/css/effect-fade";
 
 const slides = [
   {
-    image: "/images/hero.webp",
+    image: media.hero,
     eyebrow: "НЕФТЕКАМСК — ГОРОД ХОККЕЯ",
     title: (
       <>
@@ -35,7 +36,7 @@ const slides = [
     button: "К матчам",
   },
   {
-    image: "/images/team.webp",
+    image: media.team,
     eyebrow: "СЕЗОН 2026/27",
     title: (
       <>
@@ -50,7 +51,7 @@ const slides = [
     button: "Состав команды",
   },
   {
-    image: "/images/school.webp",
+    image: media.school,
     eyebrow: "ДЕТСКО-ЮНОШЕСКАЯ СПОРТИВНАЯ ШКОЛА",
     title: (
       <>
@@ -102,16 +103,6 @@ export default function Home() {
                   loading={i === 0 ? "eager" : "lazy"}
                 />
                 <div className="hero-shade" />
-                <div className="hero-watermark" aria-hidden="true">
-                  ТОРОС
-                </div>
-                {i === 0 && (
-                  <img
-                    className="hero-foreground"
-                    src={asset("/images/hero-foreground.webp")}
-                    alt=""
-                  />
-                )}
                 <div className="container hero-content">
                   <span className="eyebrow">{s.eyebrow}</span>
                   <h1 aria-hidden={active !== i}>{s.title}</h1>
@@ -217,8 +208,8 @@ export default function Home() {
       </section>
       <section className="team-banner">
         <img
-          src={asset("/images/team.webp")}
-          alt="Демонстрационная иллюстрация команды в бело-зелёной форме"
+          src={asset(media.team)}
+          alt="Игроки Тороса у борта"
           loading="lazy"
         />
         <div className="banner-shade" />
@@ -245,8 +236,8 @@ export default function Home() {
       <section className="section container school-teaser">
         <div className="school-photo">
           <img
-            src={asset("/images/school.webp")}
-            alt="Иллюстрация юного хоккеиста на тренировке"
+            src={asset(media.school)}
+            alt="Юный хоккеист в экипировке"
             loading="lazy"
           />
         </div>

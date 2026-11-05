@@ -1,17 +1,11 @@
+import { media } from "../data/media";
 import { asset } from "../lib/assets";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  MapPin,
-  Trophy,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Trophy } from "lucide-react";
 import { PageHeading, SourceNote } from "../components/layout";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
-import { sources, clubs } from "../data/content";
-import { TeamMark } from "../components/matches";
+import { sources } from "../data/content";
 export default function Club() {
   return (
     <>
@@ -21,10 +15,7 @@ export default function Club() {
         description="Город. Команда. История, которую мы продолжаем вместе."
       />
       <section className="club-hero">
-        <img
-          src={asset("/images/team.webp")}
-          alt="Визуализация команды в цветах клуба"
-        />
+        <img src={asset(media.team)} alt="Игроки Тороса у борта" />
         <div className="banner-shade" />
         <div className="container">
           <span className="eyebrow">НЕФТЕКАМСК · С 1984 ГОДА</span>
@@ -140,54 +131,6 @@ export default function Club() {
           </Link>
         </Button>
       </div>
-    </>
-  );
-}
-export function Clubs() {
-  return (
-    <>
-      <PageHeading
-        label="Клубы и соперники"
-        title="ХОККЕЙ ОБЪЕДИНЯЕТ"
-        description="«Торос», клубы лиги и «Салават Юлаев». Быстрые переходы к официальным источникам."
-      />
-      <section className="section container page-section">
-        <div className="clubs-grid">
-          {clubs.map((c) => (
-            <Card
-              className={`club-card ${c.name === "Торос" ? "is-toros" : ""}`}
-              key={c.name}
-            >
-              <div className="club-card-top">
-                <span className="eyebrow">{c.tag}</span>
-                <ExternalLink size={16} />
-              </div>
-              <div className="club-card-mark">
-                <TeamMark name={c.name} />
-              </div>
-              <h2>{c.name}</h2>
-              <p>{c.city}</p>
-              <a
-                href={c.link}
-                target="_blank"
-                rel="noreferrer"
-                className="text-link"
-              >
-                {c.name === "Торос"
-                  ? "Карточка клуба"
-                  : c.name === "Салават Юлаев"
-                    ? "Сайт клуба"
-                    : "На сайте ВХЛ"}
-                <ArrowUpRight />
-              </a>
-            </Card>
-          ))}
-        </div>
-        <SourceNote href={sources.league}>
-          Выборка клубов для демонстрации раздела; не полный состав лиги.
-          Эмблемы соперников — из официальных источников лиги и клуба.
-        </SourceNote>
-      </section>
     </>
   );
 }
