@@ -37,5 +37,6 @@
       "file": "src/components/ui/tabs.tsx",
       "sha256": "b578c16ab6cf50c1076a3c1a35c9151401c37ff2adb303514d9acc379dc17be8"
     }
-  ]
+  ],
+  "hash_format": "SHA-256 of UTF-8 text with LF line endings"
 }
