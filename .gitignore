@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.sites-local/
+.env*
+*.tsbuildinfo
+reports/
+responsive-check.html
+.openai/
