@@ -13,6 +13,8 @@ import { A11y, EffectFade, Keyboard } from "swiper/modules";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Button } from "../components/ui/button";
 import RubberSegment from "../components/reactbits/RubberSegment";
+import LivingPhoto from "../components/hero/LivingPhoto";
+import { Magnetic, MotionHeading, Reveal } from "../components/motion";
 import { NextMatch } from "../components/matches";
 import { NewsCard } from "../components/news";
 import { articles } from "../data/content";
@@ -23,45 +25,21 @@ const slides = [
   {
     image: media.hero,
     eyebrow: "НЕФТЕКАМСК — ГОРОД ХОККЕЯ",
-    title: (
-      <>
-        НАШ ГОРОД.
-        <br />
-        НАША
-        <br />
-        КОМАНДА.
-      </>
-    ),
+    title: ["НАШ ГОРОД.", "НАША", "КОМАНДА."],
     to: "/calendar",
     button: "К матчам",
   },
   {
     image: media.team,
     eyebrow: "СЕЗОН 2026/27",
-    title: (
-      <>
-        ОДНА КОМАНДА.
-        <br />
-        ОДИН
-        <br />
-        ХАРАКТЕР.
-      </>
-    ),
+    title: ["ОДНА КОМАНДА.", "ОДИН", "ХАРАКТЕР."],
     to: "/team",
     button: "Состав команды",
   },
   {
     image: media.school,
     eyebrow: "ДЕТСКО-ЮНОШЕСКАЯ СПОРТИВНАЯ ШКОЛА",
-    title: (
-      <>
-        БОЛЬШОЙ ХОККЕЙ
-        <br />
-        НАЧИНАЕТСЯ
-        <br />
-        ЗДЕСЬ.
-      </>
-    ),
+    title: ["БОЛЬШОЙ ХОККЕЙ", "НАЧИНАЕТСЯ", "ЗДЕСЬ."],
     to: "/school",
     button: "О спортшколе",
   },
@@ -95,24 +73,29 @@ export default function Home() {
           {slides.map((s, i) => (
             <SwiperSlide key={s.to}>
               <div className={`hero-scene hero-scene-${i}`}>
-                <img
-                  className="hero-image"
+                <LivingPhoto
                   src={asset(s.image)}
-                  alt=""
-                  fetchPriority={i === 0 ? "high" : "auto"}
-                  loading={i === 0 ? "eager" : "lazy"}
+                  scene={i}
+                  active={active === i}
                 />
                 <div className="hero-shade" />
                 <div className="container hero-content">
                   <span className="eyebrow">{s.eyebrow}</span>
-                  <h1 aria-hidden={active !== i}>{s.title}</h1>
+                  <MotionHeading
+                    as="h1"
+                    lines={s.title}
+                    active={active === i}
+                    aria-hidden={active !== i}
+                  />
                   <div className="hero-actions">
-                    <Button asChild className="green-button">
-                      <Link to={s.to} tabIndex={active === i ? 0 : -1}>
-                        {s.button}
-                        <ArrowRight />
-                      </Link>
-                    </Button>
+                    <Magnetic>
+                      <Button asChild className="green-button">
+                        <Link to={s.to} tabIndex={active === i ? 0 : -1}>
+                          {s.button}
+                          <ArrowRight />
+                        </Link>
+                      </Button>
+                    </Magnetic>
                     <Button asChild variant="outline" className="light-outline">
                       <Link to="/club" tabIndex={active === i ? 0 : -1}>
                         О клубе
@@ -163,12 +146,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <NextMatch />
-      <section className="section container home-news">
+      <Reveal>
+        <NextMatch />
+      </Reveal>
+      <Reveal
+        className="section container home-news"
+        role="region"
+        aria-label="Новости клуба"
+      >
         <div className="section-heading">
           <div>
             <span className="eyebrow blue-text">НОВОСТИ И СОБЫТИЯ</span>
-            <h2>ЖИЗНЬ КЛУБА</h2>
+            <MotionHeading lines={["ЖИЗНЬ КЛУБА"]} />
           </div>
           <RubberSegment
             items={[
@@ -205,8 +194,8 @@ export default function Home() {
             <ArrowRight />
           </Link>
         </div>
-      </section>
-      <section className="team-banner">
+      </Reveal>
+      <Reveal className="team-banner" role="region" aria-label="Команда города">
         <img
           src={asset(media.team)}
           alt="Игроки Тороса у борта"
@@ -215,11 +204,7 @@ export default function Home() {
         <div className="banner-shade" />
         <div className="container banner-content">
           <span className="eyebrow">ЛЮДИ, КОТОРЫЕ ВЫХОДЯТ ЗА НАШ ГОРОД</span>
-          <h2>
-            КОМАНДА
-            <br />
-            ГОРОДА
-          </h2>
+          <MotionHeading lines={["КОМАНДА", "ГОРОДА"]} />
           <p>
             «Торос» — хоккей Нефтекамска.
             <br />
@@ -232,8 +217,12 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-      </section>
-      <section className="section container school-teaser">
+      </Reveal>
+      <Reveal
+        className="section container school-teaser"
+        role="region"
+        aria-label="Спортшкола"
+      >
         <div className="school-photo">
           <img
             src={asset(media.school)}
@@ -243,10 +232,7 @@ export default function Home() {
         </div>
         <div>
           <span className="eyebrow blue-text">СЛЕДУЮЩЕЕ ПОКОЛЕНИЕ</span>
-          <h2>
-            ТВОЙ ПУТЬ
-            <br />В ХОККЕЙ
-          </h2>
+          <MotionHeading lines={["ТВОЙ ПУТЬ", "В ХОККЕЙ"]} />
           <p>
             Первые шаги на льду, первые друзья, первая команда. Узнайте о
             хоккейной школе «Тороса».
@@ -264,7 +250,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </Reveal>
       <section className="city-strip">
         <div className="container">
           <span>НАШ ГОРОД.</span>

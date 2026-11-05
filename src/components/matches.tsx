@@ -19,6 +19,8 @@ import { Logo } from "./layout";
 import type { Match } from "../data/content";
 import { matches } from "../data/content";
 import { formatMatchDate, downloadCalendar } from "../lib/calendar";
+import SpotlightCard from "./reactbits/SpotlightCard";
+
 const emblems: Record<string, string> = {
   Буран: "buran.png",
   Тамбов: "tambov.png",
@@ -127,7 +129,20 @@ export function MatchRow({ match }: { match: Match }) {
 export function NextMatch() {
   const next = matches.find((m) => !m.score)!;
   return (
-    <section className="next-match container" aria-label="Ближайший матч">
+    <SpotlightCard
+      className="next-match container motion-next-match"
+      role="region"
+      aria-label="Ближайший матч"
+      theme="light"
+      spotlightColor="rgba(0, 155, 56, 0.35)"
+      intensity={1}
+      spotlightSize={330}
+      proximity={0}
+      ambient={false}
+      flare={false}
+      grain={0}
+      borderGlow={0.35}
+    >
       <div className="next-label">
         <CalendarDays />
         <h2>
@@ -155,6 +170,6 @@ export function NextMatch() {
           <ArrowRight />
         </Link>
       </Button>
-    </section>
+    </SpotlightCard>
   );
 }

@@ -36,7 +36,155 @@
     {
       "file": "src/components/ui/tabs.tsx",
       "sha256": "b578c16ab6cf50c1076a3c1a35c9151401c37ff2adb303514d9acc379dc17be8"
+    },
+    {
+      "file": "src/components/reactbits/Particles.tsx",
+      "sha256": "a014bffe33b6d23066a00637c89abd169bc8da1913d7bbd1779f2aedd4a6f5da"
+    },
+    {
+      "file": "src/components/reactbits/Particles.css",
+      "sha256": "a5c384b80f3b58374326602cd6a0d5cc56a5e1ba8c91f5b24077df15222784cb"
+    },
+    {
+      "file": "src/components/hero/vertex.glsl",
+      "sha256": "0316d1c8c679b2acc0308fd08223e4586885e92e95ca72be46df76d28ab69be9"
+    },
+    {
+      "file": "src/components/hero/fragment.glsl",
+      "sha256": "959c665677e5a939176ae3d310fd3af27c5b31073522bd970ef86aa5e3572660"
+    },
+    {
+      "file": "public/images/vhl.svg",
+      "sha256": "04cf235d68014433eaf29210f7b4a43bc0d8b8d33199892e46afa092c80827c4",
+      "source": "https://www.vhlru.ru/bitrix/templates/vhl_new/static/img/vhl-logo-2.svg?11"
+    },
+    {
+      "file": "public/images/arena-header.svg",
+      "sha256": "2319e0e656a921b2035a71dc9a53e0e6405f1c3bec436457fa2282b013b6a27f",
+      "source": "Owner reference concepts/01-arena-energy-v2.png",
+      "source_crop": [
+        0,
+        21,
+        50,
+        89
+      ],
+      "adaptation": "Traced silhouette with pixel stair-step simplification; viewport preserves the page-edge attachment without letterboxing"
+    },
+    {
+      "file": "public/images/arena-left.svg",
+      "sha256": "a1bd594c11378c8a6150980d46af5c9159e226cdedcbcd48b8532aba7fc0ca1a",
+      "source": "Owner reference concepts/01-arena-energy-v2.png",
+      "source_crop": [
+        0,
+        405,
+        36,
+        510
+      ],
+      "adaptation": "Traced silhouette with pixel stair-step simplification; viewport preserves the page-edge attachment without letterboxing"
+    },
+    {
+      "file": "public/images/arena-right.svg",
+      "sha256": "212fef5be7102c9b16ed6b10525d51ab6b6854b34d37694dc1b16dc433cb47f9",
+      "source": "Owner reference concepts/01-arena-energy-v2.png",
+      "source_crop": [
+        972,
+        245,
+        1024,
+        400
+      ],
+      "adaptation": "Traced silhouette with pixel stair-step simplification; viewport preserves the page-edge attachment without letterboxing"
+    },
+    {
+      "file": "src/components/reactbits/TargetCursor.tsx",
+      "sha256": "f46441f4190326b63223a2d036f455a2539154e98b67caa0c975f57f12204417",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Animations/TargetCursor/TargetCursor.tsx"
+    },
+    {
+      "file": "src/components/reactbits/TargetCursor.css",
+      "sha256": "bdc97cc4fd93867e8c58506e2ca34a2434db2fa54283b60f28d745cdf908ee0c",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Animations/TargetCursor/TargetCursor.css"
+    },
+    {
+      "file": "src/components/reactbits/Magnet.tsx",
+      "sha256": "e2e16a1b06fb7ae164809bd6129ed0147d2d6bfffd3600025029dc3e4f8efaa6",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Animations/Magnet/Magnet.tsx"
+    },
+    {
+      "file": "src/components/reactbits/AnimatedContent.tsx",
+      "sha256": "14cd1d545b728d03ff58646a7c5717a61e9f6f25772a4793767a95809dc68a9b",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Animations/AnimatedContent/AnimatedContent.tsx"
+    },
+    {
+      "file": "src/components/reactbits/GlareHover.tsx",
+      "sha256": "3a9a48aeaf30d39ec2a887ca12eaa061dbd5437bcbfbf9f86664df07da179288",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Animations/GlareHover/GlareHover.tsx"
+    },
+    {
+      "file": "src/components/reactbits/GlareHover.css",
+      "sha256": "556debf36792dd1a774b27f96c120494b7d2a1ed19c188f2b30faf5df31f2b35",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Animations/GlareHover/GlareHover.css"
+    },
+    {
+      "file": "src/components/reactbits/SpotlightCard.tsx",
+      "sha256": "8ec55b0c442f2fa880c8ba7e9c2d7bdebea8e6a188ecf071f6b4d67f044e39d4",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx"
+    },
+    {
+      "file": "src/components/reactbits/SpotlightCard.css",
+      "sha256": "b646b7da4bb46f0a4d819d0af275804c49a845a5c2dc848700aaf9282db13a92",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Components/SpotlightCard/SpotlightCard.css"
+    },
+    {
+      "file": "src/components/reactbits/TiltedCard.tsx",
+      "sha256": "ebe1a366c89040d1396783a314558744d4d486f1037aa01786e55d50419f60ca",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Components/TiltedCard/TiltedCard.tsx"
+    },
+    {
+      "file": "src/components/reactbits/TiltedCard.css",
+      "sha256": "6214acb092fd97b67af30712ae7d53590bd65ee695c79867410dbed68a042904",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/Components/TiltedCard/TiltedCard.css"
+    },
+    {
+      "file": "src/components/reactbits/SplitText.tsx",
+      "sha256": "36d216e44654272c03a2282ee47037b0b072e954dfc4b64de7ecd4c150103f8c",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/TextAnimations/SplitText/SplitText.tsx"
+    },
+    {
+      "file": "src/components/reactbits/CountUp.tsx",
+      "sha256": "d93f64b067bad014211427f8be17efb3f1a9574cf27d53adf0f4b611399b5963",
+      "source_commit": "4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4",
+      "source": "https://github.com/DavidHDev/react-bits/blob/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default/TextAnimations/CountUp/CountUp.tsx"
+    },
+    {
+      "file": "src/components/aceternity/direction-aware-hover.tsx",
+      "sha256": "955e5bdf3276bcd974538ab4775214ee8cea5b631911b84e5a41448e4eca7448",
+      "source": "https://ui.aceternity.com/registry/direction-aware-hover.json",
+      "original_source_sha256": "8667bdfa7fe1e7ae0683cea7c09ee695de84fe9632ed25ccfa85ca8801736d70",
+      "retrieved_at": "2026-11-05"
     }
   ],
-  "hash_format": "SHA-256 of UTF-8 text with LF line endings"
+  "hash_format": "SHA-256 of UTF-8 text with LF line endings",
+  "hero_motion_sources": [
+    {
+      "project": "React Bits Particles",
+      "commit": "1eeb6f105c68b964289d85dabbe84a1d551f3797",
+      "license": "MIT + Commons Clause"
+    },
+    {
+      "project": "Codrops / akella fake3d",
+      "commit": "c86d190b8ab0",
+      "license": "Codrops resource license; full terms in THIRD_PARTY_NOTICES.md"
+    }
+  ]
 }

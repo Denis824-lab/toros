@@ -1,0 +1,32 @@
+.hero-depth {
+  position: absolute;
+  z-index: -3;
+  pointer-events: none;
+  opacity: 0;
+  mask-image: linear-gradient(90deg, transparent, #000 30%);
+}
+.hero-depth.is-ready { opacity: 1; }
+.hero-ice {
+  position: absolute;
+  inset: 45% 0 0 20%;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(0deg, #000 8%, #0009 55%, transparent);
+  opacity: 0.6;
+}
+.hero-ice-1 { inset: 62% 0 0 35%; opacity: 0.7; }
+.hero-ice-2 { inset: 55% 0 0 25%; opacity: 0.6; }
+@media (max-width: 640px) {
+  .hero-depth { mask-image: none; }
+  .hero-ice { inset: 38% 0 0; opacity: 0.65; }
+}
+@media (max-width: 360px) {
+  .hero .hero-scene .hero-actions > a {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-depth, .hero-ice { display: none; }
+}

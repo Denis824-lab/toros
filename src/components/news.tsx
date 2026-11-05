@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import type { Article } from "../data/content";
 import { Card } from "./ui/card";
+import { NewsPhoto } from "./motion";
 export function NewsCard({
   article,
   featured = false,
@@ -13,15 +14,11 @@ export function NewsCard({
   return (
     <Card className={`news-card ${featured ? "featured-news" : ""}`}>
       <Link to={`/news/${article.slug}`}>
-        <div className="news-image">
-          <img
-            src={asset(article.image)}
-            alt={article.imageAlt}
-            loading="lazy"
-            width="800"
-            height="533"
-          />
-        </div>
+        <NewsPhoto
+          src={asset(article.image)}
+          alt={article.imageAlt}
+          featured={featured}
+        />
         <div className="news-card-content">
           <div className="news-meta">
             <span>{article.category}</span>

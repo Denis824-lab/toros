@@ -1,0 +1,152 @@
+.motion-title-line {
+  display: block;
+}
+.motion-title-line > .split-parent {
+  max-width: 100%;
+  vertical-align: top;
+}
+.motion-magnet {
+  flex-shrink: 0;
+}
+.motion-magnet-inner {
+  display: flex;
+}
+.motion-magnet-inner > a {
+  width: 100%;
+}
+.header-ticket-magnet {
+  margin-left: 0;
+}
+.hero-actions > .motion-magnet {
+  display: flex !important;
+}
+.hero-actions > .motion-magnet a {
+  height: 100%;
+}
+.motion-next-match.spotlight-card {
+  padding: 26px 28px;
+  border-radius: 6px;
+  background: linear-gradient(100deg, #eaf0f9, #f4f7fb);
+  box-shadow: none;
+}
+.motion-next-match > .spotlight-card__light {
+  z-index: 0;
+}
+.motion-next-match > div,
+.motion-next-match > a {
+  position: relative;
+  z-index: 2;
+}
+.motion-news-tilt .tilted-card__rim,
+.motion-news-tilt .tilted-card__edge {
+  display: none;
+}
+.motion-news-tilt .tilted-card__img {
+  transition: none;
+}
+.motion-news-tilt:hover .tilted-card__img {
+  transform: none;
+}
+.news-card .direction-news-image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.news-card .direction-news-photo {
+  transform: scale(1.12);
+  scale: 1;
+}
+.direction-news-caption {
+  font-size: 10px;
+  font-weight: 800;
+}
+.trophies > .trophy-glare {
+  width: 100%;
+  height: auto;
+  align-items: start;
+  place-items: start;
+  border: 0;
+  border-left: 3px solid var(--green);
+  border-radius: 0;
+  background: transparent;
+  padding-block: 8px;
+}
+.trophies > .trophy-glare > .trophy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+.trophy-content > span:last-child {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #71839c;
+}
+.championship-count {
+  margin-top: 24px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+}
+.championship-count .count-up-text {
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 1200px) {
+  .motion-next-match.spotlight-card {
+    padding: 24px;
+  }
+}
+@media (max-width: 640px) {
+  .trophies .trophy-content strong {
+    font-size: clamp(34px, 11vw, 46px);
+  }
+  .trophies > .trophy-glare > .trophy-content {
+    min-width: 0;
+    gap: 10px;
+  }
+  .trophies .trophy-content > span:last-child {
+    font-size: 6px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+  .hero-actions > .motion-magnet {
+    flex: 0 0 140px;
+    min-width: 0;
+  }
+  .hero-actions > .motion-magnet .motion-magnet-inner {
+    width: 100%;
+  }
+  .hero .hero-actions > .motion-magnet a {
+    min-width: 0;
+    height: 40px;
+    font-size: 10px;
+    padding-inline: 15px;
+  }
+  .hero-actions > .motion-magnet svg {
+    width: 15px;
+  }
+  .motion-next-match.spotlight-card {
+    padding: 18px 16px;
+  }
+}
+@media (max-width: 360px) {
+  .hero .hero-scene .hero-actions > :is(.motion-magnet, a) {
+    flex: 0 0 calc((100% - 10px) / 2);
+    width: calc((100% - 10px) / 2);
+    min-width: 0;
+  }
+  .hero-actions > .motion-magnet a {
+    padding-inline: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .target-cursor,
+  .spotlight-card__light,
+  .spotlight-card__edge,
+  .glare-hover__glare {
+    display: none !important;
+  }
+  .motion-magnet-inner {
+    transform: none !important;
+  }
+}

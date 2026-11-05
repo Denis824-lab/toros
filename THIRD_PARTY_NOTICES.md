@@ -318,3 +318,40 @@ SOFTWARE.
 ## Owner-supplied photographs — updated 2026-11-05
 
 The former synthetic hero/team/school assets have been replaced. Original photographs were supplied by the project owner from Desktop files photo_2026-11-05_17-14-08.jpg, -09.jpg, -10.jpg, and -39.jpg. Portrait-real.jpg is the unedited owner-supplied photograph. Hero-real.webp, team-real.webp and school-real.webp are art-directed derivatives of the corresponding real photographs, using the built-in image generation editor for environment extension, cool grading and subtle edge ice spray. They are not representations of additional documented events. Photo rights remain with their rightsholders; original photo license was not supplied. No image is claimed as open source.
+
+
+## React Bits Particles
+
+Source: https://github.com/DavidHDev/react-bits/tree/1eeb6f105c68b964289d85dabbe84a1d551f3797/src/ts-default/Backgrounds/Particles
+Commit: 1eeb6f105c68b964289d85dabbe84a1d551f3797. Retrieved 2026-11-05.
+License: MIT + Commons Clause; full text in REACTBITS-PARTICLES-LICENSE.md.
+Used inside the Toros website, not offered as a standalone component product. Local adaptations: 30 fps cap, ResizeObserver, WebGL construction fallback, explicit geometry/program/context disposal, particleColors dependency. Original shaders retained. The hero wrapper controls active slide, viewport visibility, page visibility, pause and reduced motion. Uses OGL 1.0.11 (Unlicense, https://github.com/oframe/ogl).
+
+## Codrops Fake 3D Image Effect — Yuri Artiukh
+
+Source: https://github.com/akella/fake3d/tree/c86d190b8ab0
+Demo: https://tympanus.net/Tutorials/Fake3DEffect/
+Retrieved 2026-11-05. Original vertex.glsl and fragment.glsl retained in src/components/hero. The runtime retains mirrored sampling and extends UV cropping and zoom. Depth displacement is replaced by rigid UV translation to prevent silhouette tearing; no depth maps are loaded or shipped. Renderer lifecycle adapted for React. Demo photographs and Gyronorm are not included.
+
+Original license from the repository README:
+
+This resource can be used freely if integrated or build upon in personal or commercial projects such as websites, web apps and web templates intended for sale. It is not allowed to take the resource "as-is" and sell it, redistribute, re-publish it, or sell "pluginized" versions of it. Free plugins built using this resource should have a visible mention and link to the original work. Always consider the licenses of all included libraries, scripts and images used.
+
+
+## ВХЛ — официальный знак лиги
+
+Source: https://www.vhlru.ru/bitrix/templates/vhl_new/static/img/vhl-logo-2.svg?11
+Retrieved from the official league website on 2026-11-05. The original SVG is stored unchanged as public/images/vhl.svg. League marks remain the property of their rightsholders; no open-source license is asserted. Used as a league identifier linked to the official website.
+
+## Arena edge accents
+
+Three separate SVG silhouettes (public/images/arena-header.svg, arena-left.svg and arena-right.svg) traced from the corresponding three accents in the owner-provided concepts/01-arena-energy-v2.png. Source crops and hashes are recorded in component-provenance.json. Pixel stair-steps simplified, the original distinguishing bends and notch retained. Right attachment edge aligned to the viewport boundary. Assets use preserveAspectRatio="none" to avoid internal letterboxing that would separate the shape from the page edge. Original single-shape variant removed after owner feedback on 2026-11-05.
+
+
+## Approved Toros motion components — 2026-11-05
+
+React Bits: TargetCursor, Magnet, AnimatedContent, SplitText, SpotlightCard, GlareHover, TiltedCard, CountUp. Original sources pinned to commit 4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4 in https://github.com/DavidHDev/react-bits/tree/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default . License: MIT + Commons Clause, full text in REACTBITS-LICENSE.md. Integrated into this website, not redistributed as a standalone component product. Local adaptations: committed settings refs from effects for React concurrent rendering; TargetCursor excludes inputs/inert elements, sleeps when settled and handles resize; SplitText avoids italic clipping unless masking is requested; TiltedCard images load lazily. Toros wrappers define placement, green palette, restrained amplitudes, accessible headings, reactive reduced motion and pointer-capability fallbacks.
+
+Aceternity Direction Aware Hover: original source retrieved 2026-11-05 from https://ui.aceternity.com/registry/direction-aware-hover.json . Source page: https://ui.aceternity.com/components/direction-aware-hover . Aceternity License: https://ui.aceternity.com/licence . Used within this end product. Adaptations: descriptive image alt text, lazy loading, preserved image dimensions, removal of console logging, smaller directional travel, existing card geometry and touch/reduced-motion fallback via Toros wrapper. Original source hash and adapted file hash are recorded in component-provenance.json.
+
+GSAP 3.14.2 and @gsap/react 2.1.2: https://gsap.com/standard-license . GSAP Standard License, no charge for the use in this website. Includes ScrollTrigger and SplitText plugins. Copyright GreenSock. Motion 14.x was already part of this website; its existing notices apply. GSAP is emitted as a separate cacheable build chunk.

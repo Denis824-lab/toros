@@ -26,6 +26,7 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import { sources } from "../data/content";
+import { Magnetic, MotionHeading, SiteCursor } from "./motion";
 
 export function Logo({
   className = "",
@@ -62,8 +63,24 @@ function SiteHeader() {
         </div>
       </div>
       <div className="container header-row">
-        <Link to="/" className="brand" aria-label="Торос — главная">
-          <Logo inverse />
+        <div className="brand">
+          <a
+            className="league-brand"
+            href="https://www.vhlru.ru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Всероссийская хоккейная лига — официальный сайт (откроется в новой вкладке)"
+          >
+            <img
+              src={asset("/images/vhl.svg")}
+              alt="ВХЛ"
+              width="134"
+              height="164"
+            />
+          </a>
+          <Link to="/" className="club-brand" aria-label="Торос — главная">
+            <Logo inverse />
+          </Link>
           <span className="brand-caption">
             ХОККЕЙНЫЙ КЛУБ
             <br />
@@ -71,7 +88,7 @@ function SiteHeader() {
             <br />
             НЕФТЕКАМСК
           </span>
-        </Link>
+        </div>
         <nav className="desktop-nav" aria-label="Основная навигация">
           <NavigationMenu>
             <NavigationMenuList>
@@ -129,12 +146,14 @@ function SiteHeader() {
             </NavLink>
           ))}
         </nav>
-        <Button asChild className="ticket-button">
-          <Link to="/tickets">
-            <Ticket /> <span>Билеты</span>
-            <ArrowUpRight />
-          </Link>
-        </Button>
+        <Magnetic className="header-ticket-magnet">
+          <Button asChild className="ticket-button">
+            <Link to="/tickets">
+              <Ticket /> <span>Билеты</span>
+              <ArrowUpRight />
+            </Link>
+          </Button>
+        </Magnetic>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button
@@ -261,6 +280,7 @@ export function Layout() {
       <a href="#main" className="skip-link">
         Перейти к содержимому
       </a>
+      <SiteCursor />
       <SiteHeader />
       <main id="main" tabIndex={-1}>
         <Suspense
@@ -299,7 +319,7 @@ export function PageHeading({
         <div className="heading-line">
           <div>
             <span className="eyebrow">ТОРОС · НЕФТЕКАМСК</span>
-            <h1>{title}</h1>
+            <MotionHeading as="h1" lines={[title]} />
           </div>
           {children}
         </div>

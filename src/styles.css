@@ -250,6 +250,27 @@ a[data-slot] {
   gap: 24px;
   flex-shrink: 0;
 }
+.club-brand {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding-left: 20px;
+  border-left: 1px solid #49617c;
+}
+.league-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.league-brand img {
+  width: 49px;
+  height: auto;
+  display: block;
+}
+.league-brand:focus-visible, .club-brand:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
 .club-logo {
   object-fit: contain;
   width: 118px;
@@ -438,7 +459,7 @@ a[data-slot] {
 .hero-actions {
   margin-top: 32px;
 }
-.hero-actions > a {
+.hero-actions > a, .hero-actions > .motion-magnet a {
   height: 46px;
   min-width: 160px;
   justify-content: space-between;
@@ -883,6 +904,11 @@ a[data-slot] {
   font-size: 11px;
   color: #d0dbea;
 }
+.footer-top > div > a {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+}
 .footer-top a:hover {
   color: #4de68e;
 }
@@ -1280,6 +1306,7 @@ a[data-slot] {
   height: 100%;
   object-fit: cover;
   object-position: right;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 34%);
 }
 .coaches-grid {
   display: grid;
@@ -2474,13 +2501,13 @@ a[data-slot] {
     margin-top: 22px;
     gap: 10px;
   }
-  .hero-actions > a {
+  .hero-actions > a, .hero-actions > .motion-magnet a {
     font-size: 10px;
     height: 40px;
     min-width: 140px;
     padding-inline: 15px;
   }
-  .hero-actions > a > svg {
+  .hero-actions > a > svg, .hero-actions > .motion-magnet a > svg {
     width: 15px;
   }
   .hero-controls {
@@ -2952,6 +2979,7 @@ a[data-slot] {
   .coach-intro img {
     height: 210px;
     object-position: right;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 30%);
   }
   .coaches-grid {
     grid-template-columns: 1fr;
@@ -3526,28 +3554,53 @@ button.bg-primary {
   content: "";
   position: absolute;
   top: 23px;
-  left: 10px;
-  width: 13px;
+  left: 0;
+  width: 58px;
   height: 88px;
-  transform: skewX(-26deg);
-  background: #009b38;
+  background: url('/images/arena-header.svg') left top / 100% 100% no-repeat;
   pointer-events: none;
+}
+.hero::before, .hero::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  width: 54px;
+  height: 160px;
+  pointer-events: none;
+}
+.hero::before {
+  left: 0;
+  bottom: 44px;
+  width: 36px;
+  height: 112px;
+  background: url('/images/arena-left.svg') left bottom / 100% 100% no-repeat;
+}
+.hero::after {
+  right: 0;
+  top: 18%;
+  background: url('/images/arena-right.svg') right top / 100% 100% no-repeat;
 }
 
 @media (max-width: 900px) {
   .site-header::after {
     height: 76px;
-    width: 10px;
-    left: 4px;
+    width: 44px;
   }
 }
 @media (max-width: 640px) {
   .site-header::after {
     top: 21px;
     height: 67px;
-    width: 8px;
-    left: -4px;
+    width: 30px;
+    left: 0;
   }
+  .header-row { gap: 10px; }
+  .brand { gap: 10px; }
+  .club-brand { padding-left: 10px; }
+  .league-brand img { width: 33px; }
+  .hero::before, .hero::after { width: 26px; height: 84px; }
+  .hero::before { left: 0; width: 16px; bottom: 92px; }
+  .hero::after { top: 20%; }
   .news-segment {
     width: 100%;
     --rs-pad: 8px !important;
