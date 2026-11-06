@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { asset } from "../lib/assets";
 import {
   CalendarDays,
@@ -18,7 +19,7 @@ import { Link } from "react-router-dom";
 import { Logo } from "./layout";
 import type { Match } from "../data/content";
 import { matches } from "../data/content";
-import { formatMatchDate, downloadCalendar } from "../lib/calendar";
+import { formatMatchDate, downloadCalendar, getMatchStart } from "../lib/calendar";
 import SpotlightCard from "./reactbits/SpotlightCard";
 
 const emblems: Record<string, string> = {
@@ -29,12 +30,14 @@ const emblems: Record<string, string> = {
   "Салават Юлаев": "salavat.svg",
 };
 export function TeamMark({ name }: { name: string }) {
-  return name === "Торос" ? (
-    <Logo />
-  ) : (
+  if (name === "Торос") return <Logo />;
+  const emblem = emblems[name];
+  if (!emblem) return null;
+
+  return (
     <img
       className="club-emblem"
-      src={asset("/images/" + emblems[name])}
+      src={asset("/images/" + emblem)}
       alt={`Эмблема ХК «${name}»`}
       width="200"
       height="200"
@@ -57,7 +60,7 @@ export function MatchDialog({
           {match.home} — {match.away}
         </DialogTitle>
         <DialogDescription>
-          {formatMatchDate(match.date)} 2026 · {match.city}
+          {formatMatchDate(match.date, true)} · {match.city}
         </DialogDescription>
         <div className="match-versus">
           <div>
@@ -93,11 +96,12 @@ export function MatchDialog({
   );
 }
 export function MatchRow({ match }: { match: Match }) {
+  const venue = match.home === "Торос" ? "ДОМАШНИЙ МАТЧ" : "ВЫЕЗДНОЙ МАТЧ";
   return (
     <div className="match-row">
       <div className="match-date">
         <strong>{formatMatchDate(match.date)}</strong>
-        <span>{match.score ? "ЗАВЕРШЁН" : "ВЫЕЗДНОЙ МАТЧ"}</span>
+        <span>{match.score ? "ЗАВЕРШЁН" : venue}</span>
       </div>
       <div className="match-teams">
         <div>
@@ -127,7 +131,13 @@ export function MatchRow({ match }: { match: Match }) {
   );
 }
 export function NextMatch() {
-  const next = matches.find((m) => !m.score)!;
+  const [next] = useState(() => {
+    const now = Date.now();
+    return matches
+      .map((match) => ({ match, start: getMatchStart(match).getTime() }))
+      .filter(({ match, start }) => !match.score && start >= now)
+      .sort((a, b) => a.start - b.start)[0]?.match;
+  });
   return (
     <SpotlightCard
       className="next-match container motion-next-match"
@@ -151,19 +161,25 @@ export function NextMatch() {
           МАТЧ
         </h2>
       </div>
-      <div className="next-pair">
-        <TeamMark name={next.home} />
-        <strong>{next.home}</strong>
-        <span>—</span>
-        <Logo />
-        <strong>Торос</strong>
-      </div>
-      <div className="next-date">
-        <strong>
-          {formatMatchDate(next.date)} · {next.time}
-        </strong>
-        <span>{next.city} · время Нефтекамска</span>
-      </div>
+      {next ? (
+        <>
+          <div className="next-pair">
+            <TeamMark name={next.home} />
+            <strong>{next.home}</strong>
+            <span>—</span>
+            <TeamMark name={next.away} />
+            <strong>{next.away}</strong>
+          </div>
+          <div className="next-date">
+            <strong>
+              {formatMatchDate(next.date)} · {next.time}
+            </strong>
+            <span>{next.city} · время Нефтекамска</span>
+          </div>
+        </>
+      ) : (
+        <p className="next-date">Предстоящие матчи пока не добавлены.</p>
+      )}
       <Button asChild>
         <Link to="/calendar">
           Все матчи

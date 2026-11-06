@@ -61,7 +61,7 @@
     {
       "file": "public/images/arena-header.svg",
       "sha256": "2319e0e656a921b2035a71dc9a53e0e6405f1c3bec436457fa2282b013b6a27f",
-      "source": "Owner reference concepts/01-arena-energy-v2.png",
+      "source": "Design reference concepts/01-arena-energy-v2.png",
       "source_crop": [
         0,
         21,
@@ -73,7 +73,7 @@
     {
       "file": "public/images/arena-left.svg",
       "sha256": "a1bd594c11378c8a6150980d46af5c9159e226cdedcbcd48b8532aba7fc0ca1a",
-      "source": "Owner reference concepts/01-arena-energy-v2.png",
+      "source": "Design reference concepts/01-arena-energy-v2.png",
       "source_crop": [
         0,
         405,
@@ -85,7 +85,7 @@
     {
       "file": "public/images/arena-right.svg",
       "sha256": "212fef5be7102c9b16ed6b10525d51ab6b6854b34d37694dc1b16dc433cb47f9",
-      "source": "Owner reference concepts/01-arena-energy-v2.png",
+      "source": "Design reference concepts/01-arena-energy-v2.png",
       "source_crop": [
         972,
         245,

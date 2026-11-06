@@ -288,7 +288,7 @@ Toros vector: https://ru.wikipedia.org/wiki/Файл:ХК_Торос.svg (revisi
 Original raster source: https://tickets.hctoros.ru/static/main/images/logo.png?v=2023
 Buran, Dizel, Tambov and Yugra emblems: https://www.vhlru.ru/teams/ (retrieved 2026-11-05). Salavat Yulaev emblem: https://hcsalavat.ru/local/templates/2022_default/assets/images/logo.svg
 Match photograph: https://t.me/toros_hockeyclub/16807 — credit HC Buran. Team selfie: https://t.me/toros_hockeyclub/16817 — official club channel. References and articles link to their original sources.
-Hero, team and school campaign visuals are now processed owner-supplied photographs; see the updated photo notice below.
+See the photo notice below for the hero, team and school images.
 
 ## tw-animate-css 1.4.0
 
@@ -315,9 +315,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## Owner-supplied photographs — updated 2026-11-05
+## Hero, team and school photographs
 
-The former synthetic hero/team/school assets have been replaced. Original photographs were supplied by the project owner from Desktop files photo_2026-11-05_17-14-08.jpg, -09.jpg, -10.jpg, and -39.jpg. Portrait-real.jpg is the unedited owner-supplied photograph. Hero-real.webp, team-real.webp and school-real.webp are art-directed derivatives of the corresponding real photographs, using the built-in image generation editor for environment extension, cool grading and subtle edge ice spray. They are not representations of additional documented events. Photo rights remain with their rightsholders; original photo license was not supplied. No image is claimed as open source.
+`portrait-real.jpg` is an original photograph. `hero-real.webp`, `team-real.webp` and `school-real.webp` are edited photographs with extended backgrounds, color grading and ice effects. Photo rights remain with their respective rightsholders.
 
 
 ## React Bits Particles
@@ -325,7 +325,7 @@ The former synthetic hero/team/school assets have been replaced. Original photog
 Source: https://github.com/DavidHDev/react-bits/tree/1eeb6f105c68b964289d85dabbe84a1d551f3797/src/ts-default/Backgrounds/Particles
 Commit: 1eeb6f105c68b964289d85dabbe84a1d551f3797. Retrieved 2026-11-05.
 License: MIT + Commons Clause; full text in REACTBITS-PARTICLES-LICENSE.md.
-Used inside the Toros website, not offered as a standalone component product. Local adaptations: 30 fps cap, ResizeObserver, WebGL construction fallback, explicit geometry/program/context disposal, particleColors dependency. Original shaders retained. The hero wrapper controls active slide, viewport visibility, page visibility, pause and reduced motion. Uses OGL 1.0.11 (Unlicense, https://github.com/oframe/ogl).
+Used inside the Toros website, not offered as a standalone component product. Local adaptations: 30 fps cap, ResizeObserver, WebGL construction fallback, explicit geometry/program/context disposal, particleColors dependency. Original shaders retained. The hero wrapper controls active slide, viewport visibility, page visibility and reduced motion. Uses OGL 1.0.11 (Unlicense, https://github.com/oframe/ogl).
 
 ## Codrops Fake 3D Image Effect — Yuri Artiukh
 
@@ -345,10 +345,10 @@ Retrieved from the official league website on 2026-11-05. The original SVG is st
 
 ## Arena edge accents
 
-Three separate SVG silhouettes (public/images/arena-header.svg, arena-left.svg and arena-right.svg) traced from the corresponding three accents in the owner-provided concepts/01-arena-energy-v2.png. Source crops and hashes are recorded in component-provenance.json. Pixel stair-steps simplified, the original distinguishing bends and notch retained. Right attachment edge aligned to the viewport boundary. Assets use preserveAspectRatio="none" to avoid internal letterboxing that would separate the shape from the page edge. Original single-shape variant removed after owner feedback on 2026-11-05.
+Three separate SVG silhouettes (public/images/arena-header.svg, arena-left.svg and arena-right.svg) traced from the corresponding three accents in the design reference concepts/01-arena-energy-v2.png. Source crops and hashes are recorded in component-provenance.json. Pixel stair-steps simplified, the original distinguishing bends and notch retained. Right attachment edge aligned to the viewport boundary. Assets use preserveAspectRatio="none" to avoid internal letterboxing that would separate the shape from the page edge.
 
 
-## Approved Toros motion components — 2026-11-05
+## Toros motion components — 2026-11-05
 
 React Bits: TargetCursor, Magnet, AnimatedContent, SplitText, SpotlightCard, GlareHover, TiltedCard, CountUp. Original sources pinned to commit 4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4 in https://github.com/DavidHDev/react-bits/tree/4dc7b5b7772e1217c8fb8d2a7aa074302180e5b4/src/ts-default . License: MIT + Commons Clause, full text in REACTBITS-LICENSE.md. Integrated into this website, not redistributed as a standalone component product. Local adaptations: committed settings refs from effects for React concurrent rendering; TargetCursor excludes inputs/inert elements, sleeps when settled and handles resize; SplitText avoids italic clipping unless masking is requested; TiltedCard images load lazily. Toros wrappers define placement, green palette, restrained amplitudes, accessible headings, reactive reduced motion and pointer-capability fallbacks.
 

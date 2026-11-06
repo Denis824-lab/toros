@@ -42,7 +42,7 @@ class ErrorBoundary extends Component<
       <div className="empty-state not-found">
         <h1>НЕ УДАЛОСЬ ОТКРЫТЬ СТРАНИЦУ</h1>
         <p>Обновите страницу. Если ошибка повторяется, вернитесь на главную.</p>
-        <a className="text-link" href="/">
+        <a className="text-link" href={import.meta.env.BASE_URL}>
           На главную
         </a>
       </div>

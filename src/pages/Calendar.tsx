@@ -11,13 +11,22 @@ import { Button } from "../components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { MatchRow, MatchDialog, TeamMark } from "../components/matches";
 import { matches, sources } from "../data/content";
+
+const calendarDateFormatter = new Intl.DateTimeFormat("ru-RU", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  timeZone: "Asia/Yekaterinburg",
+});
+
 export default function Calendar() {
   const [month, setMonth] = useState(10);
   const [filter, setFilter] = useState("all");
   const [view, setView] = useState("list");
+  const [today] = useState(() => calendarDateFormatter.format(new Date()));
   const date = new Date(Date.UTC(2026, month, 1));
-  const year = date.getUTCFullYear(),
-    mon = date.getUTCMonth();
+  const year = date.getUTCFullYear();
+  const mon = date.getUTCMonth();
   const label = new Intl.DateTimeFormat("ru-RU", {
     month: "long",
     year: "numeric",
@@ -136,12 +145,16 @@ export default function Calendar() {
                   const match = selected.find(
                     (m) => Number(m.date.slice(-2)) === day,
                   );
+                  const isInMonth = day > 0 && day <= days;
+                  const isToday = isInMonth && calendarDateFormatter.format(
+                    new Date(Date.UTC(year, mon, day)),
+                  ) === today;
                   return (
                     <div
-                      className={`calendar-cell ${day === 5 && mon === 10 && year === 2026 ? "today" : ""} ${match ? "has-match" : ""}`}
+                      className={`calendar-cell ${isToday ? "today" : ""} ${match ? "has-match" : ""}`}
                       key={i}
                     >
-                      {day > 0 && day <= days && (
+                      {isInMonth && (
                         <>
                           <span className="day-number">{day}</span>
                           {match && (
@@ -156,7 +169,7 @@ export default function Calendar() {
                                 </span>
                                 <strong>{match.score || match.time}</strong>
                                 <small>
-                                  {match.score ? "Завершён" : "На выезде"}
+                                  {match.score ? "Завершён" : match.home === "Торос" ? "Дома" : "На выезде"}
                                 </small>
                               </button>
                             </MatchDialog>
