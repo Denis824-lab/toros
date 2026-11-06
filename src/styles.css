@@ -1577,6 +1577,14 @@ a[data-slot] {
   max-width: 660px;
   padding: 36px;
 }
+
+@supports not (translate: -50% -50%) {
+  .player-dialog,
+  .match-dialog {
+    transform: translate(-50%, -50%);
+    animation: none;
+  }
+}
 .match-dialog h2 {
   font-family: var(--display);
   font-size: 35px;
